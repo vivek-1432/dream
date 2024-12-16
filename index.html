@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Keshnikhar Salon</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("images/back2.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            opacity: 0; /* Initially hide everything */
+            transition: opacity 1s ease; /* Fade in the background */
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        .intro-container {
+            height: 100vh;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            position: relative;
+        }
+
+        .intro-text {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px); /* Initial hidden position */
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .intro-text.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .intro-text h1 {
+            font-size: 9em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .intro-text h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .explore-button {
+            background-color: #fa0606;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Initial hidden position */
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .explore-button.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="intro-container">
+        <div class="intro-text">
+            <h1>VK</h1>
+            <h2>Vivek Keshnikhar Salon</h2>
+            <p>Your trusted destination for all your grooming needs.</p>
+            <a href="/services.html" class="explore-button">Explore More</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fade in the background
+            document.body.classList.add("loaded");
+
+            // Delay for text appearance
+            const introText = document.querySelector('.intro-text');
+            const exploreButton = document.querySelector('.explore-button');
+
+            setTimeout(() => {
+                introText.classList.add("show");
+            }, 1000); // Text appears after 1 second
+
+            // Delay for button appearance
+            setTimeout(() => {
+                exploreButton.classList.add("show");
+            }, 2000); // Button appears after 2 seconds
+        });
+    </script>
+</body>
+</html>
